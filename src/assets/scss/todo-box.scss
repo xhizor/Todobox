@@ -1,0 +1,21 @@
+@import 'variables';
+@import 'utils';
+
+.box {
+  width: 470px;
+  height: auto;
+  background-color: #fff;
+  margin-top: 6.5%;
+  box-shadow: 0 0 2px 0 rgba(#000, .2);
+  &-header {
+    margin: 17px;
+    border-bottom: 1px solid #ddd;
+    &-title { 
+      font-weight: 500;
+    }
+    &-icon { 
+      color: $dark-gray;
+      font-size: 22px;
+    }
+  }
+}
