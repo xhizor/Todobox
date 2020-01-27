@@ -1,20 +1,24 @@
 .checkbox {
-  margin-left: 65px;
-  float: left;
+  cursor: pointer;
   &-input {
     vertical-align: middle;
     appearance: none;
-    padding: 5px;
+    padding: 6px;
     background-color:#fff;
     border: 2px solid rgba(#000, .4);
     border-radius: 2px;
+    cursor: inherit;
     &:checked {
-      background-color: $checked-background;
+      background-color: $dark-blue;
+    }
+    &:focus {
+      outline: none;
     }
   }
   &-label {
     font-size: 13px;
-    color: $form-text-color;
+    color: $dark-gray;
     margin-left: 8px;
+    cursor: inherit;
   }
 }
