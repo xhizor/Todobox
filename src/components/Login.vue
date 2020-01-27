@@ -33,7 +33,7 @@
           Forgot password?
         </a>
       </div>
-      <button class="btn btn-blue m-auto has-border-radius cursor-pointer">
+      <button class="btn btn-blue m-auto has-border-radius cursor-pointer" @click="login">
         Login
       </button>
     </form>
@@ -54,6 +54,9 @@ export default {
       this.passwordFieldType = this.passwordFieldType === 'password' 
         ? 'text' 
         : 'password';
+    },
+    login() {
+      this.$router.push('/home');
     }
   }
 }
