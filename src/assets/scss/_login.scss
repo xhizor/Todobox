@@ -24,8 +24,8 @@
       padding-left: 12px;
       font-family: 'Roboto';
       &:focus {
-        border-color: $input-focus-color;
-        caret-color: $input-focus-color;
+        border-color: $light-blue;
+        caret-color: $light-blue;
         &::placeholder {
           color: transparent;
         }
@@ -52,7 +52,7 @@
         position: absolute;
         top: 20%; 
         right: 16.5%;
-        color: $form-text-color;
+        color: $dark-gray;
         width: 24px;
         height: 24px;
         opacity: .3;
@@ -65,13 +65,13 @@
       text-align: left;
       margin-left: 65px;
       margin-top: 5px;
-      color: $form-text-color;
+      color: $dark-gray;
       margin-bottom: 20px;
     }
     .forgot-password {
       font-size: 13px;
       text-decoration: none;
-      color: $forgot-pass-lbl-color;
+      color: $dark-blue;
       margin-left: 25px;
       font-weight: bold;
     }
@@ -84,12 +84,15 @@
       line-height: 19px;
       border: 0;
       &-blue {
-        background-color: $btn-background;
+        background-color: $dark-blue;
       }
+    }
+    .checkbox {
+      margin-left: 65px;
+      float: left;
     }
   }
   .input, 
-  .checkbox-input, 
   .btn {
     &:focus {
       outline: none;
