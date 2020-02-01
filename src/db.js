@@ -6,6 +6,6 @@ Vue.use(VueIdb)
 export default new VueIdb({
   database: 'todobox',
   schemas: [{
-    task: '++id, name, status'
+    task: '++id, name, status, image'
   }]
 })
