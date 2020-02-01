@@ -41,7 +41,7 @@
       opacity: 0;
       transition: all 250ms;
     }
-    .email:focus + .floating-label, 
+    .email:focus + .floating-label,
     .password:focus + .floating-label {
       transform: translateY(-65%);
       opacity: 1;
@@ -50,7 +50,7 @@
       position: relative;
       .toggle-visibility {
         position: absolute;
-        top: 20%; 
+        top: 20%;
         right: 16.5%;
         color: $dark-gray;
         width: 24px;
@@ -72,7 +72,7 @@
       font-size: 13px;
       text-decoration: none;
       color: $dark-blue;
-      margin-left: 25px;
+      margin-left: 21%;
       font-weight: bold;
     }
     .btn {
@@ -89,10 +89,9 @@
     }
     .checkbox {
       margin-left: 65px;
-      float: left;
     }
   }
-  .input, 
+  .input,
   .btn {
     &:focus {
       outline: none;

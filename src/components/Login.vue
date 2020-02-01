@@ -1,7 +1,10 @@
 <template>
 <div class="is-centered">
   <div class="login-box has-box-shadow text-center">
-    <img src="../assets/login/logo.png" alt="Login form logo" class="login-box-logo unselectable" 
+    <img
+      :src="require('@/assets/login/logo.png')"
+      alt="Login form logo"
+      class="login-box-logo unselectable"
       draggable="false">
     <form class="login-box-form">
       <div class="position-relative">
@@ -13,27 +16,28 @@
         Helper text
       </small>
       <div class="password-wrapper">
-        <i class="material-icons toggle-visibility cursor-pointer unselectable" 
+        <i class="material-icons toggle-visibility cursor-pointer unselectable"
           @click="toggleVisibility">
           {{ passwordFieldType === 'password' ? 'visibility_off': 'visibility' }}
         </i>
-        <input :type="passwordFieldType" id="password" 
-          class="input password m-auto has-border-radius" placeholder="Password" 
+        <input :type="passwordFieldType" id="password"
+          class="input password m-auto has-border-radius" placeholder="Password"
           autocomplete="off">
         <label for="password" class="floating-label">Password</label>
       </div>
-      <div class="mt-30">
-        <div class="checkbox unselectable">
-          <input type="checkbox" id="remember-me" class="checkbox-input cursor-pointer">
-          <label for="remember-me" class="checkbox-label cursor-pointer">
-            Remember me
-          </label>
-        </div>
+      <div class="mt-30 d-flex align-center">
+        <label class="checkbox unselectable">
+          Remember me
+          <input type="checkbox" id="remember-me" class="checkbox-input">
+          <span class="checkbox-checkmark"></span>
+        </label>
         <a href="#" class="forgot-password" draggable="false">
           Forgot password?
         </a>
       </div>
-      <button class="btn btn-blue m-auto has-border-radius cursor-pointer" @click="login">
+      <button
+        class="btn btn-blue m-auto has-border-radius cursor-pointer"
+        @click="login">
         Login
       </button>
     </form>
@@ -52,16 +56,18 @@ export default {
   methods: {
     toggleVisibility() {
       this.passwordFieldType = this.passwordFieldType === 'password' 
-        ? 'text' 
+        ? 'text'
         : 'password';
     },
     login() {
-      this.$router.push('/home');
+      this.$router.push({
+        name: 'Home'
+      });
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>  
-  @import '../assets/scss/login'; 
+<style lang="scss" scoped>
+  @import '../assets/scss/login';
 </style>
