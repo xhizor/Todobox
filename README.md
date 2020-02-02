@@ -1,27 +1,36 @@
-# todobox
+# Todobox
 
-> Todo application
+> Vue.js task management web application
 
-## Build Setup
+## General
+
+This application is used for users daily task organization. Users can create unlimited tasks and move the tasks between "Todo" and "Done" board depending on the status of the task. 
+
+## Supported actions:
+- Create task
+- Edit task
+- Delete task
+- Upload image for task
+- Check mark option to change the task status "To do" to "Done"
+- Drag and drop functionallity for moving task between boards
+- Delete all done tasks
+
+
+## Usage
 
 ``` bash
+# clone repository
+git clone https://github.com/xhizor/Todobox.git
+
 # install dependencies
-npm install
+npm i
 
 # serve with hot reload at localhost:8080
 npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run all tests
-npm test
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Dependent packages
+- vue2
+- vue-router - Official Vue.js route management
+- vue-idb - IndexedDB wrapper based on Dexie.js
+- vuex - State management pattern and library
+- vuedraggable - Drag and drop component based on Sortable.js
