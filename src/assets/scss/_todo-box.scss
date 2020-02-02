@@ -10,12 +10,20 @@
   &-header {
     margin: 17px;
     border-bottom: 1px solid #ddd;
-    &-title { 
+    &-title {
+      margin-bottom: 10px;
       font-weight: 500;
     }
-    &-icon { 
+    &-icon {
       color: $dark-gray;
-      font-size: 22px;
+      font-size: 21px;
+      margin-bottom: 10px;
     }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .box {
+    width: 95%;
   }
 }
