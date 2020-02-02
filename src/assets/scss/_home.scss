@@ -13,3 +13,23 @@
     width: 73.5%;
   }
 }
+
+@media screen and (max-width: $responsive-md-bp) {
+  .container {
+    background-size: 230px;
+    margin-left: 0;
+    background-position-x: 110%;
+    background-position-y: 7%;
+    .todo-box {
+      width: 95%;
+      margin-left: auto;
+    }
+  }
+}
+
+@media screen and (max-width: $responsive-sm-bp) {
+  .container {
+    background-size: 190px;
+    background-position-x: 125%;
+  }
+}
