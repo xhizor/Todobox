@@ -1,9 +1,9 @@
 <template>
   <div>
     <Navbar/>
-    <div class="container" 
-      :style="{ backgroundImage: 'url(' + require('@/assets/todo.svg') + ')'}">
-      <div class="d-flex">
+    <div class="container"
+      :style="{ backgroundImage: 'url(' + require('@/assets/home/todo-bg.svg') + ')'}">
+      <div class="d-flex heading">
         <div class="d-flex flex-column">
           <h1 class="heading-primary">
             Manage your to do list
@@ -13,49 +13,28 @@
           </span>
         </div>
       </div>
-      <div class="d-flex todo-box space-between">
-        <TodoBox :done="false" :taskList="getToDoTaskList"/>
-        <TodoBox :done="true"  :taskList="getDoneTaskList"/>
+      <div class="d-flex todo-box space-between flex-wrap">
+        <TodoBox :status="0"  :taskList="getToDoTaskList"/>
+        <TodoBox :status="1"  :taskList="getDoneTaskList"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import Navbar from '../components/partials/Navbar';
-  import TodoBox from '../components/partials/TodoBox';
+  import Navbar from '../components/partials/Navbar'
+  import TodoBox from '../components/partials/TodoBox'
 
   export default {
     name: 'Home',
-     data() {
-      return {
-        taskList: [
-          {
-            id: 1,
-            name: 'Profile login',
-            done: false
-          },
-          {
-            id: 2,
-            name: 'Create to do list',
-            done: false
-          },
-          {
-            id: 3,
-            name: 'Design better logo',
-            done: false
-          },
-          {
-            id: 4,
-            name: 'Design better view',
-            done: true
-          },
-          {
-            id: 5,
-            name: 'Design better page',
-            done: true
-          }
-        ]
+    mounted() {
+      this.updateTaskList();
+    },
+    methods: {
+      updateTaskList() {
+        this.$db.task.toArray().then(tasks =>
+          this.$store.state.taskList = tasks
+        );
       }
     },
     components: {
@@ -64,15 +43,15 @@
     },
     computed: {
       getToDoTaskList() {
-        return this.taskList.filter(task => !task.done);
+        return this.$store.state.taskList.filter(task => !task.status);
       },
       getDoneTaskList() {
-        return this.taskList.filter(task => task.done);
+        return this.$store.state.taskList.filter(task => task.status);
       }
     }
   }
 </script>
 
 <style lang="scss" scoped>
-  @import '../assets/scss/home';  
+  @import '../assets/scss/home';
 </style>
