@@ -9,3 +9,23 @@
     color: $dark-gray;
   }
 }
+
+@media screen and (max-width: $responsive-md-bp) {
+  .heading {
+    margin-left: 30px;
+    &-primary {
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: $responsive-sm-bp) {
+  .heading {
+    &-primary {
+      font-size: 22px;
+    }
+    &-secondary {
+      font-size: 12px;
+    }
+  }
+}
