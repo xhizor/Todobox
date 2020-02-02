@@ -2,32 +2,92 @@
 @import 'utils';
 @import 'checkbox';
 
-.todo-item {
+.task-item {
   margin: 15px;
-  padding: 2px;
+  padding: 5px;
   height: 30px;
-  &:hover {
+  &-hover:hover {
     background-color: #eee;
-    .show-more {
+  }
+  .checkbox {
+    width: 100%;
+    &-label {
+      font-size: 14px;
+      font-weight: 400;
       display: block;
     }
   }
-  .checkbox {
-    &-input {
-      margin-left: 5px;
+  .show-actions {
+    font-size: 21px;
+    color: $dark-gray;
+    margin-top: 4px;
+    &.icon-green {
+      color: $light-green;
     }
-    &-label {
-      font-size: 14px; 
-      font-weight: 400;
-      &.done {
-        color: rgba($dark-gray, .5);
+  }
+  .actions {
+    font-size: 22px;
+    color: $dark-gray;
+    opacity: 0;
+    &-box {
+      width: 210px;
+      height: auto;
+      border: 1px solid #ddd;
+      box-shadow: 3px 3px 8px 0 rgba(#000, .2);
+      position: absolute;
+      top: 0;
+      right: -46.5%;
+      z-index: 999;
+      background-color: #fff;
+      &-container {
+        margin-top: 6px;
+      }
+      .action-wrapper {
+        padding: 13px;
+        i {
+          font-size: 21px;
+          color: $dark-gray;
+          flex-basis: 16%;
+        }
+        span {
+          font-size: 14px;
+        }
+        &:hover {
+          background-color: #eee;
+        }
       }
     }
   }
-  .show-more {
-    font-size: 22px;  
-    margin-right: 7px;
-    color: $dark-gray;
-    display: none;
+  .input {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background-color: #eee;
+    font-size: 14px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.done {
+  color: rgba($dark-gray, .5);
+}
+
+@media screen and (max-width: 650px) {
+  .box {
+    margin: auto;
+  }
+  .actions-box {
+    left: 0;
+    bottom: 0;
+    margin-top: auto !important;
+    width: 100% !important;
+    top: initial !important;
+  }
+  .action-wrapper i {
+    flex-basis: 10% !important;
+  }
+  .task-item {
+    position: static !important;
   }
 }
