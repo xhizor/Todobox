@@ -2,13 +2,12 @@
 @import 'utils';
 
 .main-navbar {
-  background-color: #232C33;
+  background-color: $navbar-background;
   height: 70px;
-  align-items: center;
   letter-spacing: .5px;
   .navbar-brand {
-    margin-left: 21%;
-    width: 95px;
+    margin-left: 20%;
+    width: 110px;
     &-title {
       font-size: 14px;
       font-weight: bold;
@@ -16,31 +15,44 @@
     }
     &-image {
       width: 22px;
-      height: 22px;
+      &-wrapper {
+        display: flex;
+        background: linear-gradient(45deg, $dark-gray, $navbar-background);
+        position: relative;
+        line-height: 50px;
+        width: 40px;
+        border-radius: 40%;
+        height: 40px;
+        flex-shrink: 0;
+      }
     }
   }
   .user-box {
     margin-left: 45%;
-    cursor: pointer;
     &-username {
       font-size: 12px;
       color: #eee;
-      margin-right: 20px;
+      margin-right: 10px;
       font-weight: 500;
     }
     &-avatar {
+      cursor: pointer;
       .img {
         width: 35px;
         height: 35px;
         box-sizing: content-box;
+        &-wrapper {
+          height: 70px;
+          padding: 15px;
+        }
       }
     }
   }
   .logout-box {
-    position: absolute; 
-    right: -10px;
-    top: 54px; 
-    border: 1px solid #ddd; 
+    position: absolute;
+    right: -3px;
+    top: 70px;
+    border: 1px solid #ddd;
     box-shadow: 3px 3px 8px 0 rgba(#000, .2);
     background: #fff;
     width: 210px;
@@ -55,7 +67,7 @@
       font-size: 13px;
     }
     &-wrapper {
-      margin-left: 15px; 
+      margin-left: 15px;
       width: 37%;
     }
   }
@@ -63,4 +75,44 @@
 .img-focus {
   border: 2px solid #eee;
   border-radius: 50%;
+}
+.img-container-focus {
+  background-color: #353D43;
+}
+
+@media screen and (max-width: $responsive-md-bp) {
+  .navbar-brand {
+    margin-left: 5%;
+  }
+  .user-box-username {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $responsive-sm-bp) {
+  .navbar-brand {
+    margin-left: 8% !important;
+  }
+  .logout-box {
+    height: 92vh !important;
+    width: 82vw !important;
+    z-index: 1;
+    &-wrapper {
+      position: absolute;
+      left: 25%;
+      bottom: 20px;
+      width: 38% !important;
+      padding: 15px;
+    }
+  }
+  .user-box-username {
+    display: block;
+    position: absolute;
+    top: 100px;
+    z-index: 2;
+    left: 45%;
+    color: #000 !important;
+    font-size: 14px !important;
+    cursor: default !important;
+  }
 }
