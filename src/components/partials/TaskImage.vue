@@ -44,14 +44,12 @@
         });
       },
       removeTaskImage() {
-        if (confirm('Are you sure you want to delete image?')) {
-          if (this.imgUrl === this.task.image) {
-            this.$db.task.update(this.task.id, { image: null });
-            this.imgUrl = '';
-          }
-          else {
-            this.imgUrl = this.task.image;
-          }
+        if (this.imgUrl === this.task.image) {
+          this.$db.task.update(this.task.id, { image: null });
+          this.imgUrl = '';
+        }
+        else {
+          this.imgUrl = this.task.image;
         }
       }
     }
