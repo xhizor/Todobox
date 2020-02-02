@@ -98,3 +98,31 @@
     }
   }
 }
+
+@media screen and (max-width: $responsive-sm-bp) {
+  .login-box {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+  .is-centered {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: $responsive-xs-bp) {
+  .email-help-text, .checkbox {
+    margin-left: 5px !important;
+    white-space: nowrap;
+  }
+  .forgot-password {
+    margin-left: 90px !important;
+    white-space: nowrap;
+  }
+  .floating-label {
+    left: 10px !important;
+  }
+  .toggle-visibility {
+    right: 15px !important;
+  }
+}
